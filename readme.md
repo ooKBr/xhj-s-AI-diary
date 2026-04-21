@@ -29,12 +29,29 @@
 - 提交的时机
   每次完成一个相对独立的模块后，提交一下
   提交信息要准确完整。
+
 ## react 全家桶
 ### react-router-dom
-- 前端路由
+- 前端路由 
 早期前端没有路由，路由由后端，前端是切图崽
-前后端分离，前后端有独立的（html5）路由，实现页面切换
-### zustand
-- 中央状态管理
-### axios
-- http 请求库 0
+前后端分离， 前端有独立的（html5）路由，实现页面切换。
+- 两种形式
+  - HashRouter  #/     丑一点 很温柔 兼容性很好 瞄点  
+  - BrowserRouter /    和后端路由一样，需要使用到html5 history API ，兼容不好，ie11 之前不兼容， 现在的浏览器几乎都支持 
+  
+- as Router 可读性 
+- 性能， 快 页面组件的懒加载
+  /   Home  延迟一下About  阻止加载
+  /About About 
+
+### 路由有多少种？
+- 普通路由 
+- 动态路由 /product/:id
+- 通配路由 * 
+- 嵌套路由 Outlet 
+  <Outlet> 是 React Router DOM 中的组件，用于在父路由元素中渲染其子路由匹配到的内容。
+- 鉴权路由（路由守卫） ProtectRoute
+- redirect 重定向路由 Navigate
+### 路由生成访问历史
+  history 栈 先进后出
+  replace redirect 跳转，会替换当前的历史记录
